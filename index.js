@@ -73,9 +73,10 @@
       });
     };
 
-    factory.assoc = function(name, attr) {
+    factory.assoc = function(name, attr, overrideAttrs) {
+      overrideAttrs = overrideAttrs || {}
       return function(callback) {
-        factory.create(name, function(err, doc) {
+        factory.create(name, overrideAttrs, function(err, doc) {
           if (err) return callback(err);
           callback(null, attr ? doc[attr] : doc);
         });
