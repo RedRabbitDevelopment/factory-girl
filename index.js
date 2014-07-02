@@ -74,7 +74,7 @@
     };
 
     factory.assoc = function(name, attr, overrideAttrs) {
-      overrideAttrs = overrideAttrs || {}
+      overrideAttrs = overrideAttrs || {};
       return function(callback) {
         factory.create(name, overrideAttrs, function(err, doc) {
           if (err) return callback(err);
